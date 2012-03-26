@@ -1,6 +1,6 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="App.xaml.cs" company="">
-//   
+// <copyright file="App.xaml.cs" company="LeetSoftwerx">
+//   2012 © LeetSoftwerx
 // </copyright>
 // <summary>
 //   Interaction logic for App.xaml
