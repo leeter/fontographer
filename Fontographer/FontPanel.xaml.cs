@@ -1,36 +1,46 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="FontPanel.xaml.cs" company="LeetSoftwerx">
+//   2012 © LeetSoftwerx
+// </copyright>
+// <summary>
+//   Interaction logic for FontPanel.xaml
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
 
 namespace Fontographer
 {
+    using System.Windows;
+    using System.Windows.Controls;
+
     /// <summary>
     /// Interaction logic for FontPanel.xaml
     /// </summary>
     public partial class FontPanel : UserControl
     {
+        #region Constructors and Destructors
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FontPanel"/> class. 
+        /// Initializes a new instance of the <see cref="FontPanel"/> class.
+        /// </summary>
         public FontPanel()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
 
-        private void ItalicButton_Click(object sender, RoutedEventArgs e)
-        {
-            this.UserSandbox.FontStyle = this.UserSandbox.FontStyle == FontStyles.Normal
-                                             ? FontStyles.Italic
-                                             : FontStyles.Normal;
-        }
+        #endregion
 
+        #region Methods
+
+        /// <summary>
+        /// The bold button_ click.
+        /// </summary>
+        /// <param name="sender">
+        /// The sender.
+        /// </param>
+        /// <param name="e">
+        /// The e.
+        /// </param>
         private void BoldButton_Click(object sender, RoutedEventArgs e)
         {
             this.UserSandbox.FontWeight = this.UserSandbox.FontWeight == FontWeights.Normal
@@ -38,30 +48,43 @@ namespace Fontographer
                                               : FontWeights.Normal;
         }
 
-        private void KerningButton_Click(object sender, RoutedEventArgs e)
-        {
-            this.UserSandbox.Typography.Kerning = this.UserSandbox.Typography.Kerning ? false : true;
-        }
-
+        /// <summary>
+        /// The contextual alternates button_ click.
+        /// </summary>
+        /// <param name="sender">
+        /// The sender.
+        /// </param>
+        /// <param name="e">
+        /// The e.
+        /// </param>
         private void ContextualAlternatesButton_Click(object sender, RoutedEventArgs e)
         {
-            this.UserSandbox.Typography.ContextualAlternates = this.UserSandbox.Typography.ContextualAlternates
-                                                                   ? false
-                                                                   : true;
+            this.UserSandbox.Typography.ContextualAlternates = !this.UserSandbox.Typography.ContextualAlternates;
         }
 
+        /// <summary>
+        /// The contextual ligatures button_ click.
+        /// </summary>
+        /// <param name="sender">
+        /// The sender.
+        /// </param>
+        /// <param name="e">
+        /// The e.
+        /// </param>
         private void ContextualLigaturesButton_Click(object sender, RoutedEventArgs e)
         {
-            this.UserSandbox.Typography.ContextualLigatures = this.UserSandbox.Typography.ContextualLigatures
-                                                                  ? false
-                                                                  : true;
+            this.UserSandbox.Typography.ContextualLigatures = !this.UserSandbox.Typography.ContextualLigatures;
         }
 
-        private void SlashedZeroButton_Click(object sender, RoutedEventArgs e)
-        {
-            this.UserSandbox.Typography.SlashedZero = this.UserSandbox.Typography.SlashedZero ? false : true;
-        }
-
+        /// <summary>
+        /// The fraction combo_ selection changed.
+        /// </summary>
+        /// <param name="sender">
+        /// The sender.
+        /// </param>
+        /// <param name="e">
+        /// The e.
+        /// </param>
         private void FractionCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var combo = sender as ComboBox;
@@ -69,18 +92,87 @@ namespace Fontographer
             this.UserSandbox.Typography.Fraction = fractionStyle;
         }
 
-        private void Ligatures_Click(object sender, RoutedEventArgs e)
-        {
-            this.UserSandbox.Typography.StandardLigatures = this.UserSandbox.Typography.StandardLigatures ? false : true;
-        }
-
+        /// <summary>
+        /// The historical ligatures button_ click.
+        /// </summary>
+        /// <param name="sender">
+        /// The sender.
+        /// </param>
+        /// <param name="e">
+        /// The e.
+        /// </param>
         private void HistoricalLigaturesButton_Click(object sender, RoutedEventArgs e)
         {
-            this.UserSandbox.Typography.HistoricalLigatures = this.UserSandbox.Typography.HistoricalLigatures
-                                                                  ? false
-                                                                  : true;
+            this.UserSandbox.Typography.HistoricalLigatures = !this.UserSandbox.Typography.HistoricalLigatures;
         }
 
+        /// <summary>
+        /// The italic button_ click.
+        /// </summary>
+        /// <param name="sender">
+        /// The sender.
+        /// </param>
+        /// <param name="e">
+        /// The e.
+        /// </param>
+        private void ItalicButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.UserSandbox.FontStyle = this.UserSandbox.FontStyle == FontStyles.Normal
+                                             ? FontStyles.Italic
+                                             : FontStyles.Normal;
+        }
+
+        /// <summary>
+        /// The kerning button_ click.
+        /// </summary>
+        /// <param name="sender">
+        /// The sender.
+        /// </param>
+        /// <param name="e">
+        /// The e.
+        /// </param>
+        private void KerningButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.UserSandbox.Typography.Kerning = !this.UserSandbox.Typography.Kerning;
+        }
+
+        /// <summary>
+        /// The ligatures_ click.
+        /// </summary>
+        /// <param name="sender">
+        /// The sender.
+        /// </param>
+        /// <param name="e">
+        /// The e.
+        /// </param>
+        private void Ligatures_Click(object sender, RoutedEventArgs e)
+        {
+            this.UserSandbox.Typography.StandardLigatures = !this.UserSandbox.Typography.StandardLigatures;
+        }
+
+        /// <summary>
+        /// The slashed zero button_ click.
+        /// </summary>
+        /// <param name="sender">
+        /// The sender.
+        /// </param>
+        /// <param name="e">
+        /// The e.
+        /// </param>
+        private void SlashedZeroButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.UserSandbox.Typography.SlashedZero = !this.UserSandbox.Typography.SlashedZero;
+        }
+
+        /// <summary>
+        /// The stylistic set combo_ selection changed.
+        /// </summary>
+        /// <param name="sender">
+        /// The sender.
+        /// </param>
+        /// <param name="e">
+        /// The e.
+        /// </param>
         private void StylisticSetCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             this.UserSandbox.Typography.StylisticSet1 =
@@ -101,8 +193,7 @@ namespace Fontographer
                 this.UserSandbox.Typography.StylisticSet16 =
                 this.UserSandbox.Typography.StylisticSet17 =
                 this.UserSandbox.Typography.StylisticSet18 =
-                this.UserSandbox.Typography.StylisticSet19 =
-                this.UserSandbox.Typography.StylisticSet20 = false;
+                this.UserSandbox.Typography.StylisticSet19 = this.UserSandbox.Typography.StylisticSet20 = false;
 
             var combo = sender as ComboBox;
             switch (combo.SelectedIndex)
@@ -171,5 +262,7 @@ namespace Fontographer
                     return;
             }
         }
+
+        #endregion
     }
 }
