@@ -1,0 +1,36 @@
+﻿<Controls:MetroWindow x:Uid="Window_1" x:Class="Fontographer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:f="clr-namespace:Fontographer"
+        Title="Fontographer" WindowStyle="SingleBorderWindow" ResizeMode="CanResizeWithGrip">
+    <Window.Resources>
+        <ResourceDictionary x:Uid="ResourceDictionary_1">
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary x:Uid="ResourceDictionary_2" Source="pack://application:,,,/MahApps.Metro;component/Styles/Colours.xaml"/>
+                <ResourceDictionary x:Uid="ResourceDictionary_3" Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml"/>
+                <ResourceDictionary x:Uid="ResourceDictionary_4" Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml"/>
+                <ResourceDictionary x:Uid="ResourceDictionary_5" Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseDark.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Controls:MetroContentControl x:Uid="Controls:MetroContentControl_1">
+        <Grid x:Uid="Grid_1" x:Name="mainGrid">
+            <TabControl x:Uid="TabControl_1">
+                <TabItem x:Uid="TabItem_1" Header="_Fonts">
+                    <ListView x:Uid="fontGrid" x:Name="fontGrid"
+                  Margin="10,0,0,60" AlternationCount="2" SelectedIndex="0" ItemTemplate="{StaticResource ImageTextCollectionTemplate}" ItemsSource="{Binding Source={StaticResource Fonts}}">
+                        <ListView.ItemsPanel>
+                            <ItemsPanelTemplate x:Uid="ItemsPanelTemplate_1" >
+                                <UniformGrid x:Uid="UniformGrid_1" Columns="2"/>
+                            </ItemsPanelTemplate>
+                        </ListView.ItemsPanel>
+                    </ListView>                    
+                </TabItem>
+                <TabItem x:Uid="TabItem_2" Header="_Font Explorer">
+                    <f:FontPanel x:Uid="f:FontPanel_1" DataContext="{Binding ElementName=fontGrid, Path=SelectedItem}"/>
+                </TabItem>
+            </TabControl>            
+        </Grid>
+    </Controls:MetroContentControl>
+</Controls:MetroWindow>
