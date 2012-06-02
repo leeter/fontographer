@@ -1,0 +1,50 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Fontographer">
+    <Style x:Key="ss1" TargetType="TextBlock">
+        <Setter Property="Typography.StylisticSet1" Value="True"/>
+        <Setter Property="Typography.ContextualAlternates" Value="True"/>
+        <Setter Property="Typography.DiscretionaryLigatures" Value="True"/>
+    </Style>
+    <x:String x:Key="AppName">Fontographer</x:String>
+    <x:String x:Key="SmallLipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vitae massa tellus. Vestibulum auctor condimentum velit vel sagittis.</x:String>
+    <x:String x:Key="LongLipsum1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis pharetra massa. Donec iaculis quam at lectus hendrerit non mollis ipsum ornare. Suspendisse ut purus elit, tristique feugiat nisi. Sed varius, magna sed adipiscing vulputate, mauris mauris pretium diam, id scelerisque purus enim quis eros.</x:String>
+    <x:String x:Key="LongLipsum2">Sed lobortis faucibus nunc. Proin scelerisque, nulla nec commodo elementum, augue turpis faucibus quam, eget interdum eros urna vitae metus. In molestie bibendum quam quis pulvinar. Proin vel accumsan mauris. Vivamus gravida vulputate mauris eget laoreet. Aenean non tortor tortor. Fusce porta arcu in tellus pretium auctor.</x:String>
+    <x:String x:Key="LongLipsum3">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean orci sem, ullamcorper eu posuere non, eleifend sit amet augue. Proin commodo venenatis laoreet. Nulla pharetra volutpat urna, sed sagittis magna aliquet ac.</x:String>
+    <x:String x:Key="LongLipsum4">Aliquam suscipit vulputate augue non dapibus. Pellentesque tempus erat vitae enim tincidunt ultrices. Pellentesque bibendum consequat mauris, eu rutrum ligula tincidunt in.</x:String>
+    <x:String x:Key="LongLipsum5">Ut quis consequat urna. Sed vel laoreet ligula. Praesent aliquam eleifend diam sed sollicitudin. Sed ac volutpat ipsum. Sed non erat id odio vulputate vulputate.</x:String>
+    <x:String x:Key="LongLipsum6">Sed commodo ultricies odio, sit amet gravida ipsum ornare a. In mi neque, tempor non tincidunt sit amet, pellentesque quis purus.</x:String>
+    <DataTemplate x:Key="FontDisplayTemplate130">
+        <Grid Height="110" Margin="6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Border Background="{StaticResource ListViewItemPlaceholderRectBrush}" Width="110" Height="110">
+                <TextBlock HorizontalAlignment="Center" Text="{Binding FirstChar}" Style="{StaticResource ss1}" FontFamily="{Binding FontName}" Height="110" FontSize="56"/>
+            </Border>
+            <StackPanel Grid.Column="1" VerticalAlignment="Top" Margin="10,0,0,0">
+                <TextBlock Text="{Binding FontName}" Style="{StaticResource TitleTextStyle}" TextWrapping="NoWrap"/>
+                <TextBlock Text="{Binding Manufacturer}" Style="{StaticResource CaptionTextStyle}" />
+                <TextBlock Text="{Binding FontName}" Style="{StaticResource BodyTextStyle}" FontFamily="{Binding FontName}"/>
+            </StackPanel>
+        </Grid>
+    </DataTemplate>
+    <DataTemplate x:Key="FontDisplayTemplate80">
+        <Grid Margin="6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Border Background="{StaticResource ListViewItemPlaceholderRectBrush}" Width="60" Height="60">
+                <TextBlock HorizontalAlignment="Center" Text="{Binding FirstChar}" Style="{StaticResource ss1}" FontFamily="{Binding FontName}" Height="60" FontSize="48"/>
+            </Border>
+            <StackPanel Grid.Column="1" Margin="10,0,0,0">
+                <TextBlock Text="{Binding FontName}" Style="{StaticResource ItemTextStyle}" MaxHeight="40"/>
+                <TextBlock Text="{Binding Manufacturer}" Style="{StaticResource CaptionTextStyle}" TextWrapping="NoWrap"/>
+            </StackPanel>
+        </Grid>
+    </DataTemplate>
+
+</ResourceDictionary>
