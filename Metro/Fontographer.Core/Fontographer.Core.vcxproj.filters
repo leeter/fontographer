@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resources">
+      <UniqueIdentifier>54298ec0-bd96-4d3e-9ef8-bfe057899b9b</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Headers">
+      <UniqueIdentifier>{f60741e3-e665-4171-a911-416267af56b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code">
+      <UniqueIdentifier>{82c6e166-2a89-421c-b271-fdf7b6dbc3b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers\Common">
+      <UniqueIdentifier>{d08e8f58-f5c0-44bb-9864-f9e0335cede8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Common">
+      <UniqueIdentifier>{dca733f8-51aa-4f6b-af30-ac02dc508052}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Font.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="FontFinder.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="RangeHelpers.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Font.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="FontFinder.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+    <ClCompile Include="RangeHelpers.cpp">
+      <Filter>Code</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Fontographer.Core.rc">
+      <Filter>Resources</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
