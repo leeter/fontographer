@@ -27,7 +27,7 @@
                         </ListView.ItemsPanel>
                     </ListView>                    
                 </TabItem>
-                <TabItem x:Uid="TabItem_2" Header="_Font Explorer">
+                <TabItem x:Uid="TabItem_2" Header="Font _Explorer">
                     <f:FontPanel x:Uid="f:FontPanel_1" DataContext="{Binding ElementName=fontGrid, Path=SelectedItem}"/>
                 </TabItem>
             </TabControl>            
